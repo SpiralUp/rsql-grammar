@@ -1,0 +1,1 @@
+(fl=in=('a','b','c') and fb=bt=(1,100)) and ((field1.field2.field3==1234) OR (field5=lt=2)) AND (a=='test')
