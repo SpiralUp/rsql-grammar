@@ -1,5 +1,6 @@
 lexer grammar RsqlCommonLexer;
 
+
 DOT:                                 '.';
 LR_BRACKET:                          '(';
 RR_BRACKET:                          ')';
@@ -10,6 +11,17 @@ SINGLE_QUOTE_SYMB:                   '\'';
 DOUBLE_QUOTE_SYMB:                   '"';
 REVERSE_QUOTE_SYMB:                  '`';
 COLON_SYMB:                          ':';
+
+DATE_LITERAL: '#' DEC_DIGIT+ '-' DEC_DIGIT+ '-' DEC_DIGIT+ '#'
+            | '#' DEC_DIGIT+ '#'
+;
+DATETIME_LITERAL:
+    '#' DEC_DIGIT+ '-' DEC_DIGIT+ '-' DEC_DIGIT+ 'T' DEC_DIGIT+ ':' DEC_DIGIT+ ':' DEC_DIGIT+ ('Z'| ('+'|'-') DEC_DIGIT+ ':' DEC_DIGIT+) '#'
+    | '#' DEC_DIGIT+ 'T' DEC_DIGIT+ ':' DEC_DIGIT+ ':' DEC_DIGIT+ ('Z'| ('+'|'-') DEC_DIGIT+ ':' DEC_DIGIT+) '#'
+    | '#' DEC_DIGIT+ '-' DEC_DIGIT+ '-' DEC_DIGIT+ 'T' DEC_DIGIT+ ':' DEC_DIGIT+ ':' DEC_DIGIT+ '.' DEC_DIGIT+ ('Z'| ('+'|'-') DEC_DIGIT+ ':' DEC_DIGIT+) '#'
+    | '#' DEC_DIGIT+ 'T' DEC_DIGIT+ ':' DEC_DIGIT+ ':' DEC_DIGIT+ '.' DEC_DIGIT+ ('Z'| ('+'|'-') DEC_DIGIT+ ':' DEC_DIGIT+) '#'
+
+    ;
 
 STRING_LITERAL:  DQUOTA_STRING | SQUOTA_STRING | BQUOTA_STRING;
 DECIMAL_LITERAL: DEC_DIGIT+;

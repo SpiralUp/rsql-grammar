@@ -1,4 +1,4 @@
-// Generated from D:/v/test/antlr/rsql2/src/main/antlr\RsqlWhere.g4 by ANTLR 4.8
+// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
 package rsql.antlr.where;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -78,6 +78,20 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSingleConditionString(RsqlWhereParser.SingleConditionStringContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code singleConditionDate}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionDate(RsqlWhereParser.SingleConditionDateContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleConditionDatetime}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionDatetime(RsqlWhereParser.SingleConditionDatetimeContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code singleConditionDecimal}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
 	 * @param ctx the parse tree
@@ -91,6 +105,13 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSingleConditionReal(RsqlWhereParser.SingleConditionRealContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleConditionOtherField}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree

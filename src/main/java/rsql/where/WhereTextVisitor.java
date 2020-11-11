@@ -1,8 +1,6 @@
 package rsql.where;
 
 import org.antlr.v4.runtime.tree.ParseTree;
-import rsql.antlr.where.RsqlWhereBaseVisitor;
-import rsql.antlr.where.RsqlWhereParser;
 
 public class WhereTextVisitor extends RsqlWhereBaseVisitor<String> {
 

@@ -1,4 +1,4 @@
-// Generated from D:/v/test/antlr/rsql2/src/main/antlr\RsqlWhere.g4 by ANTLR 4.8
+// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
 package rsql.antlr.where;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -122,6 +122,30 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 */
 	void exitSingleConditionString(RsqlWhereParser.SingleConditionStringContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code singleConditionDate}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionDate(RsqlWhereParser.SingleConditionDateContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionDate}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionDate(RsqlWhereParser.SingleConditionDateContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleConditionDatetime}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionDatetime(RsqlWhereParser.SingleConditionDatetimeContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionDatetime}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionDatetime(RsqlWhereParser.SingleConditionDatetimeContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code singleConditionDecimal}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
 	 * @param ctx the parse tree
@@ -145,6 +169,18 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSingleConditionReal(RsqlWhereParser.SingleConditionRealContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleConditionOtherField}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionOtherField}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree

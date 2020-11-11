@@ -7,7 +7,7 @@
           <option name="fileName" value="$PROJECT_DIR$/src/main/antlr/RsqlWhere.g4" />
           <option name="autoGen" value="true" />
           <option name="outputDir" value="" />
-          <option name="libDir" value="D:\v\test\antlr\rsql2\src\main\antlr" />
+          <option name="libDir" value="$PROJECT_DIR$/src/main/antlr" />
           <option name="encoding" value="" />
           <option name="pkg" value="rsql.antlr.where" />
           <option name="language" value="Java" />
@@ -40,7 +40,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

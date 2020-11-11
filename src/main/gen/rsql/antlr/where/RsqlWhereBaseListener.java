@@ -1,4 +1,4 @@
-// Generated from D:/v/test/antlr/rsql2/src/main/antlr\RsqlWhere.g4 by ANTLR 4.8
+// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
 package rsql.antlr.where;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -136,6 +136,30 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSingleConditionDate(RsqlWhereParser.SingleConditionDateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionDate(RsqlWhereParser.SingleConditionDateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleConditionDatetime(RsqlWhereParser.SingleConditionDatetimeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionDatetime(RsqlWhereParser.SingleConditionDatetimeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSingleConditionDecimal(RsqlWhereParser.SingleConditionDecimalContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -155,6 +179,18 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSingleConditionReal(RsqlWhereParser.SingleConditionRealContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

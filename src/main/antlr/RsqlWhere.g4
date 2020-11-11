@@ -18,6 +18,8 @@ inList
 
 inListElement
     : STRING_LITERAL
+    | DATE_LITERAL
+    | DATETIME_LITERAL
     | DECIMAL_LITERAL
     | REAL_LITERAL
     | field
@@ -28,8 +30,11 @@ singleCondition
         field operatorBT LR_BRACKET inListElement COMMA inListElement RR_BRACKET # singleConditionBetween
     |   field operatorIN LR_BRACKET inList RR_BRACKET  # singleConditionIn
     |   field operator STRING_LITERAL  # singleConditionString
+    |   field operator DATE_LITERAL    # singleConditionDate
+    |   field operator DATETIME_LITERAL    # singleConditionDatetime
     |   field operator DECIMAL_LITERAL # singleConditionDecimal
     |   field operator REAL_LITERAL    # singleConditionReal
+    |   field operator field # singleConditionOtherField
     ;
 
 
@@ -65,7 +70,5 @@ LIKE : L I K E;
 IN: I N;
 BT: B T;
 
-field:  ID(DOT_ID)*
-;
-
+field:  ID(DOT_ID)*;
 
