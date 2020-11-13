@@ -71,6 +71,13 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSingleConditionIn(RsqlWhereParser.SingleConditionInContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code singleConditionNotIn}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionNotIn(RsqlWhereParser.SingleConditionNotInContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code singleConditionString}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
 	 * @param ctx the parse tree
@@ -113,11 +120,31 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code singleConditionEnum}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionEnum(RsqlWhereParser.SingleConditionEnumContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleConditionNull}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitOperator(RsqlWhereParser.OperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RsqlWhereParser#operatorBasic}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperatorBasic(RsqlWhereParser.OperatorBasicContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RsqlWhereParser#operatorEQ}.
 	 * @param ctx the parse tree
@@ -166,6 +193,12 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOperatorIN(RsqlWhereParser.OperatorINContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link RsqlWhereParser#operatorNIN}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperatorNIN(RsqlWhereParser.OperatorNINContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link RsqlWhereParser#operatorBT}.
 	 * @param ctx the parse tree

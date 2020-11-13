@@ -124,6 +124,18 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSingleConditionNotIn(RsqlWhereParser.SingleConditionNotInContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionNotIn(RsqlWhereParser.SingleConditionNotInContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSingleConditionString(RsqlWhereParser.SingleConditionStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -196,6 +208,30 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSingleConditionEnum(RsqlWhereParser.SingleConditionEnumContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionEnum(RsqlWhereParser.SingleConditionEnumContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterOperator(RsqlWhereParser.OperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -203,6 +239,18 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitOperator(RsqlWhereParser.OperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOperatorBasic(RsqlWhereParser.OperatorBasicContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOperatorBasic(RsqlWhereParser.OperatorBasicContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -299,6 +347,18 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitOperatorIN(RsqlWhereParser.OperatorINContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOperatorNIN(RsqlWhereParser.OperatorNINContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOperatorNIN(RsqlWhereParser.OperatorNINContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

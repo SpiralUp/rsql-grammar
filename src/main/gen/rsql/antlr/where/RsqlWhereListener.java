@@ -110,6 +110,18 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 */
 	void exitSingleConditionIn(RsqlWhereParser.SingleConditionInContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code singleConditionNotIn}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionNotIn(RsqlWhereParser.SingleConditionNotInContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionNotIn}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionNotIn(RsqlWhereParser.SingleConditionNotInContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code singleConditionString}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
 	 * @param ctx the parse tree
@@ -182,6 +194,30 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 */
 	void exitSingleConditionOtherField(RsqlWhereParser.SingleConditionOtherFieldContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code singleConditionEnum}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionEnum(RsqlWhereParser.SingleConditionEnumContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionEnum}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionEnum(RsqlWhereParser.SingleConditionEnumContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleConditionNull}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionNull}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree
 	 */
@@ -191,6 +227,16 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOperator(RsqlWhereParser.OperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RsqlWhereParser#operatorBasic}.
+	 * @param ctx the parse tree
+	 */
+	void enterOperatorBasic(RsqlWhereParser.OperatorBasicContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RsqlWhereParser#operatorBasic}.
+	 * @param ctx the parse tree
+	 */
+	void exitOperatorBasic(RsqlWhereParser.OperatorBasicContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RsqlWhereParser#operatorEQ}.
 	 * @param ctx the parse tree
@@ -271,6 +317,16 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOperatorIN(RsqlWhereParser.OperatorINContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link RsqlWhereParser#operatorNIN}.
+	 * @param ctx the parse tree
+	 */
+	void enterOperatorNIN(RsqlWhereParser.OperatorNINContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link RsqlWhereParser#operatorNIN}.
+	 * @param ctx the parse tree
+	 */
+	void exitOperatorNIN(RsqlWhereParser.OperatorNINContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link RsqlWhereParser#operatorBT}.
 	 * @param ctx the parse tree

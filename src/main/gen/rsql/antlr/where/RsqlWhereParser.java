@@ -17,21 +17,24 @@ public class RsqlWhereParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, AND=6, OR=7, GT=8, LT=9, GE=10, 
-		LE=11, LIKE=12, IN=13, BT=14, DOT=15, LR_BRACKET=16, RR_BRACKET=17, COMMA=18, 
-		SEMI=19, AT_SIGN=20, SINGLE_QUOTE_SYMB=21, DOUBLE_QUOTE_SYMB=22, REVERSE_QUOTE_SYMB=23, 
-		COLON_SYMB=24, DATE_LITERAL=25, DATETIME_LITERAL=26, STRING_LITERAL=27, 
-		DECIMAL_LITERAL=28, REAL_LITERAL=29, DOT_ID=30, ID=31, NEWLINE=32, WS=33;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, AND=6, OR=7, NULL=8, GT=9, LT=10, 
+		GE=11, LE=12, LIKE=13, NIN=14, IN=15, BT=16, DOT=17, LR_BRACKET=18, RR_BRACKET=19, 
+		COMMA=20, SEMI=21, AT_SIGN=22, SINGLE_QUOTE_SYMB=23, DOUBLE_QUOTE_SYMB=24, 
+		REVERSE_QUOTE_SYMB=25, COLON_SYMB=26, DATE_LITERAL=27, DATETIME_LITERAL=28, 
+		ENUM_LITERAL=29, STRING_LITERAL=30, DECIMAL_LITERAL=31, REAL_LITERAL=32, 
+		DOT_ID=33, ID=34, NEWLINE=35, WS=36;
 	public static final int
 		RULE_where = 0, RULE_condition = 1, RULE_inList = 2, RULE_inListElement = 3, 
-		RULE_singleCondition = 4, RULE_operator = 5, RULE_operatorEQ = 6, RULE_operatorNEQ = 7, 
-		RULE_operatorGT = 8, RULE_operatorLT = 9, RULE_operatorGE = 10, RULE_operatorLE = 11, 
-		RULE_operatorLIKE = 12, RULE_operatorIN = 13, RULE_operatorBT = 14, RULE_field = 15;
+		RULE_singleCondition = 4, RULE_operator = 5, RULE_operatorBasic = 6, RULE_operatorEQ = 7, 
+		RULE_operatorNEQ = 8, RULE_operatorGT = 9, RULE_operatorLT = 10, RULE_operatorGE = 11, 
+		RULE_operatorLE = 12, RULE_operatorLIKE = 13, RULE_operatorIN = 14, RULE_operatorNIN = 15, 
+		RULE_operatorBT = 16, RULE_field = 17;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"where", "condition", "inList", "inListElement", "singleCondition", "operator", 
-			"operatorEQ", "operatorNEQ", "operatorGT", "operatorLT", "operatorGE", 
-			"operatorLE", "operatorLIKE", "operatorIN", "operatorBT", "field"
+			"operatorBasic", "operatorEQ", "operatorNEQ", "operatorGT", "operatorLT", 
+			"operatorGE", "operatorLE", "operatorLIKE", "operatorIN", "operatorNIN", 
+			"operatorBT", "field"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -39,18 +42,19 @@ public class RsqlWhereParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'=='", "'=!'", "'!='", "'='", "'=*'", null, null, null, null, 
-			null, null, null, null, null, "'.'", "'('", "')'", "','", "';'", "'@'", 
-			"'''", "'\"'", "'`'", "':'"
+			null, null, null, null, null, null, null, "'.'", "'('", "')'", "','", 
+			"';'", "'@'", "'''", "'\"'", "'`'", "':'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, "AND", "OR", "GT", "LT", "GE", "LE", 
-			"LIKE", "IN", "BT", "DOT", "LR_BRACKET", "RR_BRACKET", "COMMA", "SEMI", 
-			"AT_SIGN", "SINGLE_QUOTE_SYMB", "DOUBLE_QUOTE_SYMB", "REVERSE_QUOTE_SYMB", 
-			"COLON_SYMB", "DATE_LITERAL", "DATETIME_LITERAL", "STRING_LITERAL", "DECIMAL_LITERAL", 
-			"REAL_LITERAL", "DOT_ID", "ID", "NEWLINE", "WS"
+			null, null, null, null, null, null, "AND", "OR", "NULL", "GT", "LT", 
+			"GE", "LE", "LIKE", "NIN", "IN", "BT", "DOT", "LR_BRACKET", "RR_BRACKET", 
+			"COMMA", "SEMI", "AT_SIGN", "SINGLE_QUOTE_SYMB", "DOUBLE_QUOTE_SYMB", 
+			"REVERSE_QUOTE_SYMB", "COLON_SYMB", "DATE_LITERAL", "DATETIME_LITERAL", 
+			"ENUM_LITERAL", "STRING_LITERAL", "DECIMAL_LITERAL", "REAL_LITERAL", 
+			"DOT_ID", "ID", "NEWLINE", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -137,17 +141,17 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(33); 
+			setState(37); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(32);
+				setState(36);
 				condition(0);
 				}
 				}
-				setState(35); 
+				setState(39); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==LR_BRACKET || _la==ID );
@@ -280,7 +284,7 @@ public class RsqlWhereParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43);
+			setState(47);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
@@ -289,7 +293,7 @@ public class RsqlWhereParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(38);
+				setState(42);
 				singleCondition();
 				}
 				break;
@@ -298,11 +302,11 @@ public class RsqlWhereParser extends Parser {
 				_localctx = new ConditionParensContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(39);
+				setState(43);
 				match(LR_BRACKET);
-				setState(40);
+				setState(44);
 				condition(0);
-				setState(41);
+				setState(45);
 				match(RR_BRACKET);
 				}
 				break;
@@ -310,7 +314,7 @@ public class RsqlWhereParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(53);
+			setState(57);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -318,16 +322,16 @@ public class RsqlWhereParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(51);
+					setState(55);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
 					case 1:
 						{
 						_localctx = new ConditionAndContext(new ConditionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_condition);
-						setState(45);
+						setState(49);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(46);
+						setState(50);
 						_la = _input.LA(1);
 						if ( !(_la==AND || _la==SEMI) ) {
 						_errHandler.recoverInline(this);
@@ -337,7 +341,7 @@ public class RsqlWhereParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(47);
+						setState(51);
 						condition(3);
 						}
 						break;
@@ -345,9 +349,9 @@ public class RsqlWhereParser extends Parser {
 						{
 						_localctx = new ConditionOrContext(new ConditionContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_condition);
-						setState(48);
+						setState(52);
 						if (!(precpred(_ctx, 1))) throw new FailedPredicateException(this, "precpred(_ctx, 1)");
-						setState(49);
+						setState(53);
 						_la = _input.LA(1);
 						if ( !(_la==OR || _la==COMMA) ) {
 						_errHandler.recoverInline(this);
@@ -357,14 +361,14 @@ public class RsqlWhereParser extends Parser {
 							_errHandler.reportMatch(this);
 							consume();
 						}
-						setState(50);
+						setState(54);
 						condition(2);
 						}
 						break;
 					}
 					} 
 				}
-				setState(55);
+				setState(59);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
 			}
@@ -419,22 +423,22 @@ public class RsqlWhereParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			setState(56);
+			setState(60);
 			inListElement();
 			}
-			setState(61);
+			setState(65);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(57);
+				setState(61);
 				match(COMMA);
-				setState(58);
+				setState(62);
 				inListElement();
 				}
 				}
-				setState(63);
+				setState(67);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -457,6 +461,7 @@ public class RsqlWhereParser extends Parser {
 		public TerminalNode DATETIME_LITERAL() { return getToken(RsqlWhereParser.DATETIME_LITERAL, 0); }
 		public TerminalNode DECIMAL_LITERAL() { return getToken(RsqlWhereParser.DECIMAL_LITERAL, 0); }
 		public TerminalNode REAL_LITERAL() { return getToken(RsqlWhereParser.REAL_LITERAL, 0); }
+		public TerminalNode ENUM_LITERAL() { return getToken(RsqlWhereParser.ENUM_LITERAL, 0); }
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
 		}
@@ -483,48 +488,55 @@ public class RsqlWhereParser extends Parser {
 		InListElementContext _localctx = new InListElementContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_inListElement);
 		try {
-			setState(70);
+			setState(75);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case STRING_LITERAL:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(64);
+				setState(68);
 				match(STRING_LITERAL);
 				}
 				break;
 			case DATE_LITERAL:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(65);
+				setState(69);
 				match(DATE_LITERAL);
 				}
 				break;
 			case DATETIME_LITERAL:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(66);
+				setState(70);
 				match(DATETIME_LITERAL);
 				}
 				break;
 			case DECIMAL_LITERAL:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(67);
+				setState(71);
 				match(DECIMAL_LITERAL);
 				}
 				break;
 			case REAL_LITERAL:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(68);
+				setState(72);
 				match(REAL_LITERAL);
 				}
 				break;
-			case ID:
+			case ENUM_LITERAL:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(69);
+				setState(73);
+				match(ENUM_LITERAL);
+				}
+				break;
+			case ID:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(74);
 				field();
 				}
 				break;
@@ -579,6 +591,52 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	public static class SingleConditionNullContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
+		}
+		public TerminalNode NULL() { return getToken(RsqlWhereParser.NULL, 0); }
+		public SingleConditionNullContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionNull(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionNull(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionNull(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SingleConditionEnumContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
+		}
+		public TerminalNode ENUM_LITERAL() { return getToken(RsqlWhereParser.ENUM_LITERAL, 0); }
+		public SingleConditionEnumContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionEnum(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionEnum(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionEnum(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 	public static class SingleConditionDateContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -599,6 +657,33 @@ public class RsqlWhereParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionDate(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class SingleConditionNotInContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorNINContext operatorNIN() {
+			return getRuleContext(OperatorNINContext.class,0);
+		}
+		public TerminalNode LR_BRACKET() { return getToken(RsqlWhereParser.LR_BRACKET, 0); }
+		public InListContext inList() {
+			return getRuleContext(InListContext.class,0);
+		}
+		public TerminalNode RR_BRACKET() { return getToken(RsqlWhereParser.RR_BRACKET, 0); }
+		public SingleConditionNotInContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionNotIn(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionNotIn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionNotIn(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -757,26 +842,26 @@ public class RsqlWhereParser extends Parser {
 		SingleConditionContext _localctx = new SingleConditionContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_singleCondition);
 		try {
-			setState(110);
+			setState(129);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				_localctx = new SingleConditionBetweenContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(72);
-				field();
-				setState(73);
-				operatorBT();
-				setState(74);
-				match(LR_BRACKET);
-				setState(75);
-				inListElement();
-				setState(76);
-				match(COMMA);
 				setState(77);
-				inListElement();
+				field();
 				setState(78);
+				operatorBT();
+				setState(79);
+				match(LR_BRACKET);
+				setState(80);
+				inListElement();
+				setState(81);
+				match(COMMA);
+				setState(82);
+				inListElement();
+				setState(83);
 				match(RR_BRACKET);
 				}
 				break;
@@ -784,88 +869,128 @@ public class RsqlWhereParser extends Parser {
 				_localctx = new SingleConditionInContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(80);
+				setState(85);
 				field();
-				setState(81);
+				setState(86);
 				operatorIN();
-				setState(82);
+				setState(87);
 				match(LR_BRACKET);
-				setState(83);
+				setState(88);
 				inList();
-				setState(84);
+				setState(89);
 				match(RR_BRACKET);
 				}
 				break;
 			case 3:
-				_localctx = new SingleConditionStringContext(_localctx);
+				_localctx = new SingleConditionNotInContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(86);
+				setState(91);
 				field();
-				setState(87);
-				operator();
-				setState(88);
-				match(STRING_LITERAL);
+				setState(92);
+				operatorNIN();
+				setState(93);
+				match(LR_BRACKET);
+				setState(94);
+				inList();
+				setState(95);
+				match(RR_BRACKET);
 				}
 				break;
 			case 4:
-				_localctx = new SingleConditionDateContext(_localctx);
+				_localctx = new SingleConditionStringContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(90);
+				setState(97);
 				field();
-				setState(91);
+				setState(98);
 				operator();
-				setState(92);
-				match(DATE_LITERAL);
+				setState(99);
+				match(STRING_LITERAL);
 				}
 				break;
 			case 5:
-				_localctx = new SingleConditionDatetimeContext(_localctx);
+				_localctx = new SingleConditionDateContext(_localctx);
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(94);
+				setState(101);
 				field();
-				setState(95);
+				setState(102);
 				operator();
-				setState(96);
-				match(DATETIME_LITERAL);
+				setState(103);
+				match(DATE_LITERAL);
 				}
 				break;
 			case 6:
-				_localctx = new SingleConditionDecimalContext(_localctx);
+				_localctx = new SingleConditionDatetimeContext(_localctx);
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(98);
+				setState(105);
 				field();
-				setState(99);
+				setState(106);
 				operator();
-				setState(100);
-				match(DECIMAL_LITERAL);
+				setState(107);
+				match(DATETIME_LITERAL);
 				}
 				break;
 			case 7:
-				_localctx = new SingleConditionRealContext(_localctx);
+				_localctx = new SingleConditionDecimalContext(_localctx);
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(102);
+				setState(109);
 				field();
-				setState(103);
+				setState(110);
 				operator();
-				setState(104);
-				match(REAL_LITERAL);
+				setState(111);
+				match(DECIMAL_LITERAL);
 				}
 				break;
 			case 8:
-				_localctx = new SingleConditionOtherFieldContext(_localctx);
+				_localctx = new SingleConditionRealContext(_localctx);
 				enterOuterAlt(_localctx, 8);
 				{
-				setState(106);
+				setState(113);
 				field();
-				setState(107);
+				setState(114);
 				operator();
-				setState(108);
+				setState(115);
+				match(REAL_LITERAL);
+				}
+				break;
+			case 9:
+				_localctx = new SingleConditionOtherFieldContext(_localctx);
+				enterOuterAlt(_localctx, 9);
+				{
+				setState(117);
 				field();
+				setState(118);
+				operator();
+				setState(119);
+				field();
+				}
+				break;
+			case 10:
+				_localctx = new SingleConditionEnumContext(_localctx);
+				enterOuterAlt(_localctx, 10);
+				{
+				setState(121);
+				field();
+				setState(122);
+				operatorBasic();
+				setState(123);
+				match(ENUM_LITERAL);
+				}
+				break;
+			case 11:
+				_localctx = new SingleConditionNullContext(_localctx);
+				enterOuterAlt(_localctx, 11);
+				{
+				setState(125);
+				field();
+				setState(126);
+				operatorBasic();
+				setState(127);
+				match(NULL);
 				}
 				break;
 			}
@@ -926,58 +1051,121 @@ public class RsqlWhereParser extends Parser {
 		OperatorContext _localctx = new OperatorContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_operator);
 		try {
-			setState(119);
+			setState(138);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(112);
+				setState(131);
 				operatorEQ();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(113);
+				setState(132);
 				operatorNEQ();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(114);
+				setState(133);
 				operatorLT();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(115);
+				setState(134);
 				operatorGT();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(116);
+				setState(135);
 				operatorLE();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(117);
+				setState(136);
 				operatorGE();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(118);
+				setState(137);
 				operatorLIKE();
 				}
 				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OperatorBasicContext extends ParserRuleContext {
+		public OperatorEQContext operatorEQ() {
+			return getRuleContext(OperatorEQContext.class,0);
+		}
+		public OperatorNEQContext operatorNEQ() {
+			return getRuleContext(OperatorNEQContext.class,0);
+		}
+		public OperatorBasicContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operatorBasic; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterOperatorBasic(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitOperatorBasic(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitOperatorBasic(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OperatorBasicContext operatorBasic() throws RecognitionException {
+		OperatorBasicContext _localctx = new OperatorBasicContext(_ctx, getState());
+		enterRule(_localctx, 12, RULE_operatorBasic);
+		try {
+			setState(142);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case T__0:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(140);
+				operatorEQ();
+				}
+				break;
+			case T__1:
+			case T__2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(141);
+				operatorNEQ();
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1013,11 +1201,11 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorEQContext operatorEQ() throws RecognitionException {
 		OperatorEQContext _localctx = new OperatorEQContext(_ctx, getState());
-		enterRule(_localctx, 12, RULE_operatorEQ);
+		enterRule(_localctx, 14, RULE_operatorEQ);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(121);
+			setState(144);
 			match(T__0);
 			}
 		}
@@ -1054,12 +1242,12 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorNEQContext operatorNEQ() throws RecognitionException {
 		OperatorNEQContext _localctx = new OperatorNEQContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_operatorNEQ);
+		enterRule(_localctx, 16, RULE_operatorNEQ);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(123);
+			setState(146);
 			_la = _input.LA(1);
 			if ( !(_la==T__1 || _la==T__2) ) {
 			_errHandler.recoverInline(this);
@@ -1105,15 +1293,15 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorGTContext operatorGT() throws RecognitionException {
 		OperatorGTContext _localctx = new OperatorGTContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_operatorGT);
+		enterRule(_localctx, 18, RULE_operatorGT);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(125);
+			setState(148);
 			match(T__3);
-			setState(126);
+			setState(149);
 			match(GT);
-			setState(127);
+			setState(150);
 			match(T__3);
 			}
 		}
@@ -1151,15 +1339,15 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorLTContext operatorLT() throws RecognitionException {
 		OperatorLTContext _localctx = new OperatorLTContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_operatorLT);
+		enterRule(_localctx, 20, RULE_operatorLT);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(129);
+			setState(152);
 			match(T__3);
-			setState(130);
+			setState(153);
 			match(LT);
-			setState(131);
+			setState(154);
 			match(T__3);
 			}
 		}
@@ -1197,15 +1385,15 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorGEContext operatorGE() throws RecognitionException {
 		OperatorGEContext _localctx = new OperatorGEContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_operatorGE);
+		enterRule(_localctx, 22, RULE_operatorGE);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(133);
+			setState(156);
 			match(T__3);
-			setState(134);
+			setState(157);
 			match(GE);
-			setState(135);
+			setState(158);
 			match(T__3);
 			}
 		}
@@ -1243,15 +1431,15 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorLEContext operatorLE() throws RecognitionException {
 		OperatorLEContext _localctx = new OperatorLEContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_operatorLE);
+		enterRule(_localctx, 24, RULE_operatorLE);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(137);
+			setState(160);
 			match(T__3);
-			setState(138);
+			setState(161);
 			match(LE);
-			setState(139);
+			setState(162);
 			match(T__3);
 			}
 		}
@@ -1289,26 +1477,26 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorLIKEContext operatorLIKE() throws RecognitionException {
 		OperatorLIKEContext _localctx = new OperatorLIKEContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_operatorLIKE);
+		enterRule(_localctx, 26, RULE_operatorLIKE);
 		try {
-			setState(145);
+			setState(168);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__4:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(141);
+				setState(164);
 				match(T__4);
 				}
 				break;
 			case T__3:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(142);
+				setState(165);
 				match(T__3);
-				setState(143);
+				setState(166);
 				match(LIKE);
-				setState(144);
+				setState(167);
 				match(T__3);
 				}
 				break;
@@ -1350,15 +1538,61 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorINContext operatorIN() throws RecognitionException {
 		OperatorINContext _localctx = new OperatorINContext(_ctx, getState());
-		enterRule(_localctx, 26, RULE_operatorIN);
+		enterRule(_localctx, 28, RULE_operatorIN);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(147);
+			setState(170);
 			match(T__3);
-			setState(148);
+			setState(171);
 			match(IN);
-			setState(149);
+			setState(172);
+			match(T__3);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class OperatorNINContext extends ParserRuleContext {
+		public TerminalNode NIN() { return getToken(RsqlWhereParser.NIN, 0); }
+		public OperatorNINContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_operatorNIN; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterOperatorNIN(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitOperatorNIN(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitOperatorNIN(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final OperatorNINContext operatorNIN() throws RecognitionException {
+		OperatorNINContext _localctx = new OperatorNINContext(_ctx, getState());
+		enterRule(_localctx, 30, RULE_operatorNIN);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(174);
+			match(T__3);
+			setState(175);
+			match(NIN);
+			setState(176);
 			match(T__3);
 			}
 		}
@@ -1396,15 +1630,15 @@ public class RsqlWhereParser extends Parser {
 
 	public final OperatorBTContext operatorBT() throws RecognitionException {
 		OperatorBTContext _localctx = new OperatorBTContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_operatorBT);
+		enterRule(_localctx, 32, RULE_operatorBT);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(151);
+			setState(178);
 			match(T__3);
-			setState(152);
+			setState(179);
 			match(BT);
-			setState(153);
+			setState(180);
 			match(T__3);
 			}
 		}
@@ -1446,28 +1680,28 @@ public class RsqlWhereParser extends Parser {
 
 	public final FieldContext field() throws RecognitionException {
 		FieldContext _localctx = new FieldContext(_ctx, getState());
-		enterRule(_localctx, 30, RULE_field);
+		enterRule(_localctx, 34, RULE_field);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(155);
+			setState(182);
 			match(ID);
-			setState(159);
+			setState(186);
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(156);
+					setState(183);
 					match(DOT_ID);
 					}
 					} 
 				}
-				setState(161);
+				setState(188);
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			}
 			}
 		}
@@ -1500,51 +1734,64 @@ public class RsqlWhereParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3#\u00a5\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u00c0\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\6\2$\n"+
-		"\2\r\2\16\2%\3\3\3\3\3\3\3\3\3\3\3\3\5\3.\n\3\3\3\3\3\3\3\3\3\3\3\3\3"+
-		"\7\3\66\n\3\f\3\16\39\13\3\3\4\3\4\3\4\7\4>\n\4\f\4\16\4A\13\4\3\5\3\5"+
-		"\3\5\3\5\3\5\3\5\5\5I\n\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
+		"\4\23\t\23\3\2\6\2(\n\2\r\2\16\2)\3\3\3\3\3\3\3\3\3\3\3\3\5\3\62\n\3\3"+
+		"\3\3\3\3\3\3\3\3\3\3\3\7\3:\n\3\f\3\16\3=\13\3\3\4\3\4\3\4\7\4B\n\4\f"+
+		"\4\16\4E\13\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5N\n\5\3\6\3\6\3\6\3\6\3\6"+
 		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6q\n\6\3\7\3\7\3\7\3\7\3\7\3"+
-		"\7\3\7\5\7z\n\7\3\b\3\b\3\t\3\t\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3"+
-		"\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\16\3\16\5\16\u0094\n\16\3\17"+
-		"\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\21\3\21\7\21\u00a0\n\21\f\21\16"+
-		"\21\u00a3\13\21\3\21\2\3\4\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 "+
-		"\2\5\4\2\b\b\25\25\4\2\t\t\24\24\3\2\4\5\2\u00ad\2#\3\2\2\2\4-\3\2\2\2"+
-		"\6:\3\2\2\2\bH\3\2\2\2\np\3\2\2\2\fy\3\2\2\2\16{\3\2\2\2\20}\3\2\2\2\22"+
-		"\177\3\2\2\2\24\u0083\3\2\2\2\26\u0087\3\2\2\2\30\u008b\3\2\2\2\32\u0093"+
-		"\3\2\2\2\34\u0095\3\2\2\2\36\u0099\3\2\2\2 \u009d\3\2\2\2\"$\5\4\3\2#"+
-		"\"\3\2\2\2$%\3\2\2\2%#\3\2\2\2%&\3\2\2\2&\3\3\2\2\2\'(\b\3\1\2(.\5\n\6"+
-		"\2)*\7\22\2\2*+\5\4\3\2+,\7\23\2\2,.\3\2\2\2-\'\3\2\2\2-)\3\2\2\2.\67"+
-		"\3\2\2\2/\60\f\4\2\2\60\61\t\2\2\2\61\66\5\4\3\5\62\63\f\3\2\2\63\64\t"+
-		"\3\2\2\64\66\5\4\3\4\65/\3\2\2\2\65\62\3\2\2\2\669\3\2\2\2\67\65\3\2\2"+
-		"\2\678\3\2\2\28\5\3\2\2\29\67\3\2\2\2:?\5\b\5\2;<\7\24\2\2<>\5\b\5\2="+
-		";\3\2\2\2>A\3\2\2\2?=\3\2\2\2?@\3\2\2\2@\7\3\2\2\2A?\3\2\2\2BI\7\35\2"+
-		"\2CI\7\33\2\2DI\7\34\2\2EI\7\36\2\2FI\7\37\2\2GI\5 \21\2HB\3\2\2\2HC\3"+
-		"\2\2\2HD\3\2\2\2HE\3\2\2\2HF\3\2\2\2HG\3\2\2\2I\t\3\2\2\2JK\5 \21\2KL"+
-		"\5\36\20\2LM\7\22\2\2MN\5\b\5\2NO\7\24\2\2OP\5\b\5\2PQ\7\23\2\2Qq\3\2"+
-		"\2\2RS\5 \21\2ST\5\34\17\2TU\7\22\2\2UV\5\6\4\2VW\7\23\2\2Wq\3\2\2\2X"+
-		"Y\5 \21\2YZ\5\f\7\2Z[\7\35\2\2[q\3\2\2\2\\]\5 \21\2]^\5\f\7\2^_\7\33\2"+
-		"\2_q\3\2\2\2`a\5 \21\2ab\5\f\7\2bc\7\34\2\2cq\3\2\2\2de\5 \21\2ef\5\f"+
-		"\7\2fg\7\36\2\2gq\3\2\2\2hi\5 \21\2ij\5\f\7\2jk\7\37\2\2kq\3\2\2\2lm\5"+
-		" \21\2mn\5\f\7\2no\5 \21\2oq\3\2\2\2pJ\3\2\2\2pR\3\2\2\2pX\3\2\2\2p\\"+
-		"\3\2\2\2p`\3\2\2\2pd\3\2\2\2ph\3\2\2\2pl\3\2\2\2q\13\3\2\2\2rz\5\16\b"+
-		"\2sz\5\20\t\2tz\5\24\13\2uz\5\22\n\2vz\5\30\r\2wz\5\26\f\2xz\5\32\16\2"+
-		"yr\3\2\2\2ys\3\2\2\2yt\3\2\2\2yu\3\2\2\2yv\3\2\2\2yw\3\2\2\2yx\3\2\2\2"+
-		"z\r\3\2\2\2{|\7\3\2\2|\17\3\2\2\2}~\t\4\2\2~\21\3\2\2\2\177\u0080\7\6"+
-		"\2\2\u0080\u0081\7\n\2\2\u0081\u0082\7\6\2\2\u0082\23\3\2\2\2\u0083\u0084"+
-		"\7\6\2\2\u0084\u0085\7\13\2\2\u0085\u0086\7\6\2\2\u0086\25\3\2\2\2\u0087"+
-		"\u0088\7\6\2\2\u0088\u0089\7\f\2\2\u0089\u008a\7\6\2\2\u008a\27\3\2\2"+
-		"\2\u008b\u008c\7\6\2\2\u008c\u008d\7\r\2\2\u008d\u008e\7\6\2\2\u008e\31"+
-		"\3\2\2\2\u008f\u0094\7\7\2\2\u0090\u0091\7\6\2\2\u0091\u0092\7\16\2\2"+
-		"\u0092\u0094\7\6\2\2\u0093\u008f\3\2\2\2\u0093\u0090\3\2\2\2\u0094\33"+
-		"\3\2\2\2\u0095\u0096\7\6\2\2\u0096\u0097\7\17\2\2\u0097\u0098\7\6\2\2"+
-		"\u0098\35\3\2\2\2\u0099\u009a\7\6\2\2\u009a\u009b\7\20\2\2\u009b\u009c"+
-		"\7\6\2\2\u009c\37\3\2\2\2\u009d\u00a1\7!\2\2\u009e\u00a0\7 \2\2\u009f"+
-		"\u009e\3\2\2\2\u00a0\u00a3\3\2\2\2\u00a1\u009f\3\2\2\2\u00a1\u00a2\3\2"+
-		"\2\2\u00a2!\3\2\2\2\u00a3\u00a1\3\2\2\2\f%-\65\67?Hpy\u0093\u00a1";
+		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\u0084\n\6\3\7\3\7"+
+		"\3\7\3\7\3\7\3\7\3\7\5\7\u008d\n\7\3\b\3\b\5\b\u0091\n\b\3\t\3\t\3\n\3"+
+		"\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\16\3\16\3\16"+
+		"\3\16\3\17\3\17\3\17\3\17\5\17\u00ab\n\17\3\20\3\20\3\20\3\20\3\21\3\21"+
+		"\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\7\23\u00bb\n\23\f\23\16\23\u00be"+
+		"\13\23\3\23\2\3\4\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$\2\5\4"+
+		"\2\b\b\27\27\4\2\t\t\26\26\3\2\4\5\2\u00cb\2\'\3\2\2\2\4\61\3\2\2\2\6"+
+		">\3\2\2\2\bM\3\2\2\2\n\u0083\3\2\2\2\f\u008c\3\2\2\2\16\u0090\3\2\2\2"+
+		"\20\u0092\3\2\2\2\22\u0094\3\2\2\2\24\u0096\3\2\2\2\26\u009a\3\2\2\2\30"+
+		"\u009e\3\2\2\2\32\u00a2\3\2\2\2\34\u00aa\3\2\2\2\36\u00ac\3\2\2\2 \u00b0"+
+		"\3\2\2\2\"\u00b4\3\2\2\2$\u00b8\3\2\2\2&(\5\4\3\2\'&\3\2\2\2()\3\2\2\2"+
+		")\'\3\2\2\2)*\3\2\2\2*\3\3\2\2\2+,\b\3\1\2,\62\5\n\6\2-.\7\24\2\2./\5"+
+		"\4\3\2/\60\7\25\2\2\60\62\3\2\2\2\61+\3\2\2\2\61-\3\2\2\2\62;\3\2\2\2"+
+		"\63\64\f\4\2\2\64\65\t\2\2\2\65:\5\4\3\5\66\67\f\3\2\2\678\t\3\2\28:\5"+
+		"\4\3\49\63\3\2\2\29\66\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2<\5\3\2\2"+
+		"\2=;\3\2\2\2>C\5\b\5\2?@\7\26\2\2@B\5\b\5\2A?\3\2\2\2BE\3\2\2\2CA\3\2"+
+		"\2\2CD\3\2\2\2D\7\3\2\2\2EC\3\2\2\2FN\7 \2\2GN\7\35\2\2HN\7\36\2\2IN\7"+
+		"!\2\2JN\7\"\2\2KN\7\37\2\2LN\5$\23\2MF\3\2\2\2MG\3\2\2\2MH\3\2\2\2MI\3"+
+		"\2\2\2MJ\3\2\2\2MK\3\2\2\2ML\3\2\2\2N\t\3\2\2\2OP\5$\23\2PQ\5\"\22\2Q"+
+		"R\7\24\2\2RS\5\b\5\2ST\7\26\2\2TU\5\b\5\2UV\7\25\2\2V\u0084\3\2\2\2WX"+
+		"\5$\23\2XY\5\36\20\2YZ\7\24\2\2Z[\5\6\4\2[\\\7\25\2\2\\\u0084\3\2\2\2"+
+		"]^\5$\23\2^_\5 \21\2_`\7\24\2\2`a\5\6\4\2ab\7\25\2\2b\u0084\3\2\2\2cd"+
+		"\5$\23\2de\5\f\7\2ef\7 \2\2f\u0084\3\2\2\2gh\5$\23\2hi\5\f\7\2ij\7\35"+
+		"\2\2j\u0084\3\2\2\2kl\5$\23\2lm\5\f\7\2mn\7\36\2\2n\u0084\3\2\2\2op\5"+
+		"$\23\2pq\5\f\7\2qr\7!\2\2r\u0084\3\2\2\2st\5$\23\2tu\5\f\7\2uv\7\"\2\2"+
+		"v\u0084\3\2\2\2wx\5$\23\2xy\5\f\7\2yz\5$\23\2z\u0084\3\2\2\2{|\5$\23\2"+
+		"|}\5\16\b\2}~\7\37\2\2~\u0084\3\2\2\2\177\u0080\5$\23\2\u0080\u0081\5"+
+		"\16\b\2\u0081\u0082\7\n\2\2\u0082\u0084\3\2\2\2\u0083O\3\2\2\2\u0083W"+
+		"\3\2\2\2\u0083]\3\2\2\2\u0083c\3\2\2\2\u0083g\3\2\2\2\u0083k\3\2\2\2\u0083"+
+		"o\3\2\2\2\u0083s\3\2\2\2\u0083w\3\2\2\2\u0083{\3\2\2\2\u0083\177\3\2\2"+
+		"\2\u0084\13\3\2\2\2\u0085\u008d\5\20\t\2\u0086\u008d\5\22\n\2\u0087\u008d"+
+		"\5\26\f\2\u0088\u008d\5\24\13\2\u0089\u008d\5\32\16\2\u008a\u008d\5\30"+
+		"\r\2\u008b\u008d\5\34\17\2\u008c\u0085\3\2\2\2\u008c\u0086\3\2\2\2\u008c"+
+		"\u0087\3\2\2\2\u008c\u0088\3\2\2\2\u008c\u0089\3\2\2\2\u008c\u008a\3\2"+
+		"\2\2\u008c\u008b\3\2\2\2\u008d\r\3\2\2\2\u008e\u0091\5\20\t\2\u008f\u0091"+
+		"\5\22\n\2\u0090\u008e\3\2\2\2\u0090\u008f\3\2\2\2\u0091\17\3\2\2\2\u0092"+
+		"\u0093\7\3\2\2\u0093\21\3\2\2\2\u0094\u0095\t\4\2\2\u0095\23\3\2\2\2\u0096"+
+		"\u0097\7\6\2\2\u0097\u0098\7\13\2\2\u0098\u0099\7\6\2\2\u0099\25\3\2\2"+
+		"\2\u009a\u009b\7\6\2\2\u009b\u009c\7\f\2\2\u009c\u009d\7\6\2\2\u009d\27"+
+		"\3\2\2\2\u009e\u009f\7\6\2\2\u009f\u00a0\7\r\2\2\u00a0\u00a1\7\6\2\2\u00a1"+
+		"\31\3\2\2\2\u00a2\u00a3\7\6\2\2\u00a3\u00a4\7\16\2\2\u00a4\u00a5\7\6\2"+
+		"\2\u00a5\33\3\2\2\2\u00a6\u00ab\7\7\2\2\u00a7\u00a8\7\6\2\2\u00a8\u00a9"+
+		"\7\17\2\2\u00a9\u00ab\7\6\2\2\u00aa\u00a6\3\2\2\2\u00aa\u00a7\3\2\2\2"+
+		"\u00ab\35\3\2\2\2\u00ac\u00ad\7\6\2\2\u00ad\u00ae\7\21\2\2\u00ae\u00af"+
+		"\7\6\2\2\u00af\37\3\2\2\2\u00b0\u00b1\7\6\2\2\u00b1\u00b2\7\20\2\2\u00b2"+
+		"\u00b3\7\6\2\2\u00b3!\3\2\2\2\u00b4\u00b5\7\6\2\2\u00b5\u00b6\7\22\2\2"+
+		"\u00b6\u00b7\7\6\2\2\u00b7#\3\2\2\2\u00b8\u00bc\7$\2\2\u00b9\u00bb\7#"+
+		"\2\2\u00ba\u00b9\3\2\2\2\u00bb\u00be\3\2\2\2\u00bc\u00ba\3\2\2\2\u00bc"+
+		"\u00bd\3\2\2\2\u00bd%\3\2\2\2\u00be\u00bc\3\2\2\2\r)\619;CM\u0083\u008c"+
+		"\u0090\u00aa\u00bc";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

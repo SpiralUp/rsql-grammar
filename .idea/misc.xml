@@ -30,7 +30,7 @@
           <option name="libDir" value="D:\v\test\antlr\rsql2\src\main\antlr" />
           <option name="encoding" value="" />
           <option name="pkg" value="rsql" />
-          <option name="language" value="java" />
+          <option name="language" value="Java" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
       </list>
