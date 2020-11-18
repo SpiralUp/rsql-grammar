@@ -21,8 +21,8 @@ This work is inspired by the following works and articles:
 
 ## Grammar diagrams
 
-[RsqlWhere grammar diagram](https://raw.github.com/spiralUp/rsql-grammar/src/main/docs/RsqlWhere.html),
-[RsqlSelect grammar diagram](https://raw.github.com/spiralUp/rsql-grammar/src/main/docs/RsqlSelect.html)
+- [RsqlWhere grammar diagram](https://raw.githubusercontent.com/SpiralUp/rsql-grammar/master/src/main/doc/RsqlWhere.html),
+- [RsqlSelect grammar diagram](https://raw.githubusercontent.com/SpiralUp/rsql-grammar/master/src/main/doc/RsqlSelect.html)
 
 ## The language
 
