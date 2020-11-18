@@ -39,6 +39,7 @@ singleCondition
     |   field operator field # singleConditionOtherField
     |   field operatorBasic ENUM_LITERAL    # singleConditionEnum
     |   field operatorBasic NULL    # singleConditionNull
+    |   field operator PARAM_LITERAL    # singleConditionParam
     ;
 
 

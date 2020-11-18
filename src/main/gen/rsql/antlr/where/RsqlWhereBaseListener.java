@@ -232,6 +232,18 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSingleConditionParam(RsqlWhereParser.SingleConditionParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionParam(RsqlWhereParser.SingleConditionParamContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterOperator(RsqlWhereParser.OperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}

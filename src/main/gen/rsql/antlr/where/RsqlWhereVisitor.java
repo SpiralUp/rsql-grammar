@@ -134,6 +134,13 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code singleConditionParam}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionParam(RsqlWhereParser.SingleConditionParamContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

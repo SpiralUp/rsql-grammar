@@ -218,6 +218,18 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 */
 	void exitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code singleConditionParam}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionParam(RsqlWhereParser.SingleConditionParamContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionParam}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionParam(RsqlWhereParser.SingleConditionParamContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link RsqlWhereParser#operator}.
 	 * @param ctx the parse tree
 	 */
