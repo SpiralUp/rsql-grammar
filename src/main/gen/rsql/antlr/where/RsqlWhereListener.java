@@ -1,4 +1,4 @@
-// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.9.2
+// Generated from java-escape by ANTLR 4.11.1
 package rsql.antlr.where;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
