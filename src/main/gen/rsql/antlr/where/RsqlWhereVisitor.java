@@ -1,4 +1,4 @@
-// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
+// Generated from java-escape by ANTLR 4.11.1
 package rsql.antlr.where;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -133,6 +133,20 @@ public interface RsqlWhereVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleConditionTrue}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionTrue(RsqlWhereParser.SingleConditionTrueContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleConditionFalse}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleConditionFalse(RsqlWhereParser.SingleConditionFalseContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code singleConditionParam}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.

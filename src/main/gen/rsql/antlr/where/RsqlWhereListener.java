@@ -1,4 +1,4 @@
-// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
+// Generated from java-escape by ANTLR 4.11.1
 package rsql.antlr.where;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -217,6 +217,30 @@ public interface RsqlWhereListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleConditionTrue}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionTrue(RsqlWhereParser.SingleConditionTrueContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionTrue}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionTrue(RsqlWhereParser.SingleConditionTrueContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleConditionFalse}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleConditionFalse(RsqlWhereParser.SingleConditionFalseContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleConditionFalse}
+	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleConditionFalse(RsqlWhereParser.SingleConditionFalseContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code singleConditionParam}
 	 * labeled alternative in {@link RsqlWhereParser#singleCondition}.

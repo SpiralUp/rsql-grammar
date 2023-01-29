@@ -1,4 +1,4 @@
-// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
+// Generated from java-escape by ANTLR 4.11.1
 package rsql.antlr.where;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -10,6 +10,7 @@ import org.antlr.v4.runtime.tree.TerminalNode;
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
+@SuppressWarnings("CheckReturnValue")
 public class RsqlWhereBaseListener implements RsqlWhereListener {
 	/**
 	 * {@inheritDoc}
@@ -227,6 +228,30 @@ public class RsqlWhereBaseListener implements RsqlWhereListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSingleConditionNull(RsqlWhereParser.SingleConditionNullContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleConditionTrue(RsqlWhereParser.SingleConditionTrueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionTrue(RsqlWhereParser.SingleConditionTrueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleConditionFalse(RsqlWhereParser.SingleConditionFalseContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleConditionFalse(RsqlWhereParser.SingleConditionFalseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

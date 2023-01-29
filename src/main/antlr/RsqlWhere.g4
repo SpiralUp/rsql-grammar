@@ -39,6 +39,8 @@ singleCondition
     |   field operator field # singleConditionOtherField
     |   field operatorBasic ENUM_LITERAL    # singleConditionEnum
     |   field operatorBasic NULL    # singleConditionNull
+    |   field operatorBasic TRUE    # singleConditionTrue
+    |   field operatorBasic FALSE    # singleConditionFalse
     |   field operator PARAM_LITERAL    # singleConditionParam
     ;
 
@@ -47,6 +49,8 @@ singleCondition
 AND: A N D ;
 OR: O R ;
 NULL: N U L L;
+TRUE: T R U E;
+FALSE: F A L S E;
 
 operator
         :     operatorEQ

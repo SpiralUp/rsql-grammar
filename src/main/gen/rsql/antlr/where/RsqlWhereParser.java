@@ -1,4 +1,4 @@
-// Generated from /home/vrba/v/rsql-parser/src/main/antlr/RsqlWhere.g4 by ANTLR 4.8
+// Generated from java-escape by ANTLR 4.11.1
 package rsql.antlr.where;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
+@SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class RsqlWhereParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.8", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.11.1", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, AND=6, OR=7, NULL=8, GT=9, LT=10, 
-		GE=11, LE=12, LIKE=13, NIN=14, IN=15, BT=16, DOT=17, LR_BRACKET=18, RR_BRACKET=19, 
-		COMMA=20, SEMI=21, AT_SIGN=22, SINGLE_QUOTE_SYMB=23, DOUBLE_QUOTE_SYMB=24, 
-		REVERSE_QUOTE_SYMB=25, PARAM_LITERAL=26, DATE_LITERAL=27, DATETIME_LITERAL=28, 
-		ENUM_LITERAL=29, STRING_LITERAL=30, DECIMAL_LITERAL=31, REAL_LITERAL=32, 
-		DOT_ID=33, ID=34, NEWLINE=35, WS=36;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, AND=6, OR=7, NULL=8, TRUE=9, FALSE=10, 
+		GT=11, LT=12, GE=13, LE=14, LIKE=15, NIN=16, IN=17, BT=18, DOT=19, LR_BRACKET=20, 
+		RR_BRACKET=21, COMMA=22, SEMI=23, AT_SIGN=24, SINGLE_QUOTE_SYMB=25, DOUBLE_QUOTE_SYMB=26, 
+		REVERSE_QUOTE_SYMB=27, PARAM_LITERAL=28, DATE_LITERAL=29, DATETIME_LITERAL=30, 
+		ENUM_LITERAL=31, STRING_LITERAL=32, DECIMAL_LITERAL=33, REAL_LITERAL=34, 
+		DOT_ID=35, ID=36, NEWLINE=37, WS=38;
 	public static final int
 		RULE_where = 0, RULE_condition = 1, RULE_inList = 2, RULE_inListElement = 3, 
 		RULE_singleCondition = 4, RULE_operator = 5, RULE_operatorBasic = 6, RULE_operatorEQ = 7, 
@@ -42,16 +42,16 @@ public class RsqlWhereParser extends Parser {
 	private static String[] makeLiteralNames() {
 		return new String[] {
 			null, "'=='", "'=!'", "'!='", "'='", "'=*'", null, null, null, null, 
-			null, null, null, null, null, null, null, "'.'", "'('", "')'", "','", 
-			"';'", "'@'", "'''", "'\"'", "'`'"
+			null, null, null, null, null, null, null, null, null, "'.'", "'('", "')'", 
+			"','", "';'", "'@'", "'''", "'\"'", "'`'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, null, null, null, "AND", "OR", "NULL", "GT", "LT", 
-			"GE", "LE", "LIKE", "NIN", "IN", "BT", "DOT", "LR_BRACKET", "RR_BRACKET", 
-			"COMMA", "SEMI", "AT_SIGN", "SINGLE_QUOTE_SYMB", "DOUBLE_QUOTE_SYMB", 
+			null, null, null, null, null, null, "AND", "OR", "NULL", "TRUE", "FALSE", 
+			"GT", "LT", "GE", "LE", "LIKE", "NIN", "IN", "BT", "DOT", "LR_BRACKET", 
+			"RR_BRACKET", "COMMA", "SEMI", "AT_SIGN", "SINGLE_QUOTE_SYMB", "DOUBLE_QUOTE_SYMB", 
 			"REVERSE_QUOTE_SYMB", "PARAM_LITERAL", "DATE_LITERAL", "DATETIME_LITERAL", 
 			"ENUM_LITERAL", "STRING_LITERAL", "DECIMAL_LITERAL", "REAL_LITERAL", 
 			"DOT_ID", "ID", "NEWLINE", "WS"
@@ -92,7 +92,7 @@ public class RsqlWhereParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "RsqlWhere.g4"; }
+	public String getGrammarFileName() { return "java-escape"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -108,6 +108,7 @@ public class RsqlWhereParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class WhereContext extends ParserRuleContext {
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
@@ -168,6 +169,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class ConditionContext extends ParserRuleContext {
 		public ConditionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -179,6 +181,7 @@ public class RsqlWhereParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ConditionSingleContext extends ConditionContext {
 		public SingleConditionContext singleCondition() {
 			return getRuleContext(SingleConditionContext.class,0);
@@ -198,6 +201,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ConditionAndContext extends ConditionContext {
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
@@ -222,6 +226,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ConditionOrContext extends ConditionContext {
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
@@ -246,6 +251,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class ConditionParensContext extends ConditionContext {
 		public TerminalNode LR_BRACKET() { return getToken(RsqlWhereParser.LR_BRACKET, 0); }
 		public ConditionContext condition() {
@@ -385,6 +391,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class InListContext extends ParserRuleContext {
 		public List<InListElementContext> inListElement() {
 			return getRuleContexts(InListElementContext.class);
@@ -455,6 +462,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class InListElementContext extends ParserRuleContext {
 		public TerminalNode STRING_LITERAL() { return getToken(RsqlWhereParser.STRING_LITERAL, 0); }
 		public TerminalNode DATE_LITERAL() { return getToken(RsqlWhereParser.DATE_LITERAL, 0); }
@@ -555,6 +563,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionContext extends ParserRuleContext {
 		public SingleConditionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -566,6 +575,7 @@ public class RsqlWhereParser extends Parser {
 			super.copyFrom(ctx);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionOtherFieldContext extends SingleConditionContext {
 		public List<FieldContext> field() {
 			return getRuleContexts(FieldContext.class);
@@ -591,52 +601,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SingleConditionNullContext extends SingleConditionContext {
-		public FieldContext field() {
-			return getRuleContext(FieldContext.class,0);
-		}
-		public OperatorBasicContext operatorBasic() {
-			return getRuleContext(OperatorBasicContext.class,0);
-		}
-		public TerminalNode NULL() { return getToken(RsqlWhereParser.NULL, 0); }
-		public SingleConditionNullContext(SingleConditionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionNull(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionNull(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionNull(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	public static class SingleConditionEnumContext extends SingleConditionContext {
-		public FieldContext field() {
-			return getRuleContext(FieldContext.class,0);
-		}
-		public OperatorBasicContext operatorBasic() {
-			return getRuleContext(OperatorBasicContext.class,0);
-		}
-		public TerminalNode ENUM_LITERAL() { return getToken(RsqlWhereParser.ENUM_LITERAL, 0); }
-		public SingleConditionEnumContext(SingleConditionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionEnum(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionEnum(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionEnum(this);
-			else return visitor.visitChildren(this);
-		}
-	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionParamContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -660,6 +625,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionDateContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -683,6 +649,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionNotInContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -710,33 +677,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SingleConditionInContext extends SingleConditionContext {
-		public FieldContext field() {
-			return getRuleContext(FieldContext.class,0);
-		}
-		public OperatorINContext operatorIN() {
-			return getRuleContext(OperatorINContext.class,0);
-		}
-		public TerminalNode LR_BRACKET() { return getToken(RsqlWhereParser.LR_BRACKET, 0); }
-		public InListContext inList() {
-			return getRuleContext(InListContext.class,0);
-		}
-		public TerminalNode RR_BRACKET() { return getToken(RsqlWhereParser.RR_BRACKET, 0); }
-		public SingleConditionInContext(SingleConditionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionIn(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionIn(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionIn(this);
-			else return visitor.visitChildren(this);
-		}
-	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionStringContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -760,29 +701,7 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SingleConditionDatetimeContext extends SingleConditionContext {
-		public FieldContext field() {
-			return getRuleContext(FieldContext.class,0);
-		}
-		public OperatorContext operator() {
-			return getRuleContext(OperatorContext.class,0);
-		}
-		public TerminalNode DATETIME_LITERAL() { return getToken(RsqlWhereParser.DATETIME_LITERAL, 0); }
-		public SingleConditionDatetimeContext(SingleConditionContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionDatetime(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionDatetime(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionDatetime(this);
-			else return visitor.visitChildren(this);
-		}
-	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionDecimalContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -806,29 +725,31 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
-	public static class SingleConditionRealContext extends SingleConditionContext {
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionTrueContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
 		}
-		public OperatorContext operator() {
-			return getRuleContext(OperatorContext.class,0);
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
 		}
-		public TerminalNode REAL_LITERAL() { return getToken(RsqlWhereParser.REAL_LITERAL, 0); }
-		public SingleConditionRealContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		public TerminalNode TRUE() { return getToken(RsqlWhereParser.TRUE, 0); }
+		public SingleConditionTrueContext(SingleConditionContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionReal(this);
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionTrue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionReal(this);
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionTrue(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionReal(this);
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionTrue(this);
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
 	public static class SingleConditionBetweenContext extends SingleConditionContext {
 		public FieldContext field() {
 			return getRuleContext(FieldContext.class,0);
@@ -860,12 +781,160 @@ public class RsqlWhereParser extends Parser {
 			else return visitor.visitChildren(this);
 		}
 	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionNullContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
+		}
+		public TerminalNode NULL() { return getToken(RsqlWhereParser.NULL, 0); }
+		public SingleConditionNullContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionNull(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionNull(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionNull(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionEnumContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
+		}
+		public TerminalNode ENUM_LITERAL() { return getToken(RsqlWhereParser.ENUM_LITERAL, 0); }
+		public SingleConditionEnumContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionEnum(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionEnum(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionEnum(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionInContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorINContext operatorIN() {
+			return getRuleContext(OperatorINContext.class,0);
+		}
+		public TerminalNode LR_BRACKET() { return getToken(RsqlWhereParser.LR_BRACKET, 0); }
+		public InListContext inList() {
+			return getRuleContext(InListContext.class,0);
+		}
+		public TerminalNode RR_BRACKET() { return getToken(RsqlWhereParser.RR_BRACKET, 0); }
+		public SingleConditionInContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionIn(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionIn(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionIn(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionDatetimeContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorContext operator() {
+			return getRuleContext(OperatorContext.class,0);
+		}
+		public TerminalNode DATETIME_LITERAL() { return getToken(RsqlWhereParser.DATETIME_LITERAL, 0); }
+		public SingleConditionDatetimeContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionDatetime(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionDatetime(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionDatetime(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionFalseContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorBasicContext operatorBasic() {
+			return getRuleContext(OperatorBasicContext.class,0);
+		}
+		public TerminalNode FALSE() { return getToken(RsqlWhereParser.FALSE, 0); }
+		public SingleConditionFalseContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionFalse(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionFalse(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionFalse(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class SingleConditionRealContext extends SingleConditionContext {
+		public FieldContext field() {
+			return getRuleContext(FieldContext.class,0);
+		}
+		public OperatorContext operator() {
+			return getRuleContext(OperatorContext.class,0);
+		}
+		public TerminalNode REAL_LITERAL() { return getToken(RsqlWhereParser.REAL_LITERAL, 0); }
+		public SingleConditionRealContext(SingleConditionContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).enterSingleConditionReal(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof RsqlWhereListener ) ((RsqlWhereListener)listener).exitSingleConditionReal(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof RsqlWhereVisitor ) return ((RsqlWhereVisitor<? extends T>)visitor).visitSingleConditionReal(this);
+			else return visitor.visitChildren(this);
+		}
+	}
 
 	public final SingleConditionContext singleCondition() throws RecognitionException {
 		SingleConditionContext _localctx = new SingleConditionContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_singleCondition);
 		try {
-			setState(133);
+			setState(141);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
@@ -1017,14 +1086,38 @@ public class RsqlWhereParser extends Parser {
 				}
 				break;
 			case 12:
-				_localctx = new SingleConditionParamContext(_localctx);
+				_localctx = new SingleConditionTrueContext(_localctx);
 				enterOuterAlt(_localctx, 12);
 				{
 				setState(129);
 				field();
 				setState(130);
-				operator();
+				operatorBasic();
 				setState(131);
+				match(TRUE);
+				}
+				break;
+			case 13:
+				_localctx = new SingleConditionFalseContext(_localctx);
+				enterOuterAlt(_localctx, 13);
+				{
+				setState(133);
+				field();
+				setState(134);
+				operatorBasic();
+				setState(135);
+				match(FALSE);
+				}
+				break;
+			case 14:
+				_localctx = new SingleConditionParamContext(_localctx);
+				enterOuterAlt(_localctx, 14);
+				{
+				setState(137);
+				field();
+				setState(138);
+				operator();
+				setState(139);
 				match(PARAM_LITERAL);
 				}
 				break;
@@ -1041,6 +1134,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorContext extends ParserRuleContext {
 		public OperatorEQContext operatorEQ() {
 			return getRuleContext(OperatorEQContext.class,0);
@@ -1086,55 +1180,55 @@ public class RsqlWhereParser extends Parser {
 		OperatorContext _localctx = new OperatorContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_operator);
 		try {
-			setState(142);
+			setState(150);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(135);
+				setState(143);
 				operatorEQ();
 				}
 				break;
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(136);
+				setState(144);
 				operatorNEQ();
 				}
 				break;
 			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(137);
+				setState(145);
 				operatorLT();
 				}
 				break;
 			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(138);
+				setState(146);
 				operatorGT();
 				}
 				break;
 			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(139);
+				setState(147);
 				operatorLE();
 				}
 				break;
 			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(140);
+				setState(148);
 				operatorGE();
 				}
 				break;
 			case 7:
 				enterOuterAlt(_localctx, 7);
 				{
-				setState(141);
+				setState(149);
 				operatorLIKE();
 				}
 				break;
@@ -1151,6 +1245,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorBasicContext extends ParserRuleContext {
 		public OperatorEQContext operatorEQ() {
 			return getRuleContext(OperatorEQContext.class,0);
@@ -1181,13 +1276,13 @@ public class RsqlWhereParser extends Parser {
 		OperatorBasicContext _localctx = new OperatorBasicContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_operatorBasic);
 		try {
-			setState(146);
+			setState(154);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__0:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(144);
+				setState(152);
 				operatorEQ();
 				}
 				break;
@@ -1195,7 +1290,7 @@ public class RsqlWhereParser extends Parser {
 			case T__2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(145);
+				setState(153);
 				operatorNEQ();
 				}
 				break;
@@ -1214,6 +1309,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorEQContext extends ParserRuleContext {
 		public OperatorEQContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1240,7 +1336,7 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(148);
+			setState(156);
 			match(T__0);
 			}
 		}
@@ -1255,6 +1351,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorNEQContext extends ParserRuleContext {
 		public OperatorNEQContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -1282,7 +1379,7 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(150);
+			setState(158);
 			_la = _input.LA(1);
 			if ( !(_la==T__1 || _la==T__2) ) {
 			_errHandler.recoverInline(this);
@@ -1305,6 +1402,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorGTContext extends ParserRuleContext {
 		public TerminalNode GT() { return getToken(RsqlWhereParser.GT, 0); }
 		public OperatorGTContext(ParserRuleContext parent, int invokingState) {
@@ -1332,11 +1430,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(152);
+			setState(160);
 			match(T__3);
-			setState(153);
+			setState(161);
 			match(GT);
-			setState(154);
+			setState(162);
 			match(T__3);
 			}
 		}
@@ -1351,6 +1449,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorLTContext extends ParserRuleContext {
 		public TerminalNode LT() { return getToken(RsqlWhereParser.LT, 0); }
 		public OperatorLTContext(ParserRuleContext parent, int invokingState) {
@@ -1378,11 +1477,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(156);
+			setState(164);
 			match(T__3);
-			setState(157);
+			setState(165);
 			match(LT);
-			setState(158);
+			setState(166);
 			match(T__3);
 			}
 		}
@@ -1397,6 +1496,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorGEContext extends ParserRuleContext {
 		public TerminalNode GE() { return getToken(RsqlWhereParser.GE, 0); }
 		public OperatorGEContext(ParserRuleContext parent, int invokingState) {
@@ -1424,11 +1524,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(160);
+			setState(168);
 			match(T__3);
-			setState(161);
+			setState(169);
 			match(GE);
-			setState(162);
+			setState(170);
 			match(T__3);
 			}
 		}
@@ -1443,6 +1543,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorLEContext extends ParserRuleContext {
 		public TerminalNode LE() { return getToken(RsqlWhereParser.LE, 0); }
 		public OperatorLEContext(ParserRuleContext parent, int invokingState) {
@@ -1470,11 +1571,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(164);
+			setState(172);
 			match(T__3);
-			setState(165);
+			setState(173);
 			match(LE);
-			setState(166);
+			setState(174);
 			match(T__3);
 			}
 		}
@@ -1489,6 +1590,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorLIKEContext extends ParserRuleContext {
 		public TerminalNode LIKE() { return getToken(RsqlWhereParser.LIKE, 0); }
 		public OperatorLIKEContext(ParserRuleContext parent, int invokingState) {
@@ -1514,24 +1616,24 @@ public class RsqlWhereParser extends Parser {
 		OperatorLIKEContext _localctx = new OperatorLIKEContext(_ctx, getState());
 		enterRule(_localctx, 26, RULE_operatorLIKE);
 		try {
-			setState(172);
+			setState(180);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__4:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(168);
+				setState(176);
 				match(T__4);
 				}
 				break;
 			case T__3:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(169);
+				setState(177);
 				match(T__3);
-				setState(170);
+				setState(178);
 				match(LIKE);
-				setState(171);
+				setState(179);
 				match(T__3);
 				}
 				break;
@@ -1550,6 +1652,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorINContext extends ParserRuleContext {
 		public TerminalNode IN() { return getToken(RsqlWhereParser.IN, 0); }
 		public OperatorINContext(ParserRuleContext parent, int invokingState) {
@@ -1577,11 +1680,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(174);
+			setState(182);
 			match(T__3);
-			setState(175);
+			setState(183);
 			match(IN);
-			setState(176);
+			setState(184);
 			match(T__3);
 			}
 		}
@@ -1596,6 +1699,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorNINContext extends ParserRuleContext {
 		public TerminalNode NIN() { return getToken(RsqlWhereParser.NIN, 0); }
 		public OperatorNINContext(ParserRuleContext parent, int invokingState) {
@@ -1623,11 +1727,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(178);
+			setState(186);
 			match(T__3);
-			setState(179);
+			setState(187);
 			match(NIN);
-			setState(180);
+			setState(188);
 			match(T__3);
 			}
 		}
@@ -1642,6 +1746,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class OperatorBTContext extends ParserRuleContext {
 		public TerminalNode BT() { return getToken(RsqlWhereParser.BT, 0); }
 		public OperatorBTContext(ParserRuleContext parent, int invokingState) {
@@ -1669,11 +1774,11 @@ public class RsqlWhereParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(182);
+			setState(190);
 			match(T__3);
-			setState(183);
+			setState(191);
 			match(BT);
-			setState(184);
+			setState(192);
 			match(T__3);
 			}
 		}
@@ -1688,6 +1793,7 @@ public class RsqlWhereParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
 	public static class FieldContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(RsqlWhereParser.ID, 0); }
 		public List<TerminalNode> DOT_ID() { return getTokens(RsqlWhereParser.DOT_ID); }
@@ -1720,21 +1826,21 @@ public class RsqlWhereParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(186);
+			setState(194);
 			match(ID);
-			setState(190);
+			setState(198);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(187);
+					setState(195);
 					match(DOT_ID);
 					}
 					} 
 				}
-				setState(192);
+				setState(200);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,10,_ctx);
 			}
@@ -1769,65 +1875,133 @@ public class RsqlWhereParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3&\u00c4\4\2\t\2\4"+
-		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\3\2\6\2(\n\2\r\2\16\2)\3\3\3\3\3\3\3\3\3\3\3\3\5\3\62\n\3\3"+
-		"\3\3\3\3\3\3\3\3\3\3\3\7\3:\n\3\f\3\16\3=\13\3\3\4\3\4\3\4\7\4B\n\4\f"+
-		"\4\16\4E\13\4\3\5\3\5\3\5\3\5\3\5\3\5\3\5\5\5N\n\5\3\6\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
-		"\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\5\6\u0088"+
-		"\n\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7\u0091\n\7\3\b\3\b\5\b\u0095\n\b\3"+
-		"\t\3\t\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\16"+
-		"\3\16\3\16\3\16\3\17\3\17\3\17\3\17\5\17\u00af\n\17\3\20\3\20\3\20\3\20"+
-		"\3\21\3\21\3\21\3\21\3\22\3\22\3\22\3\22\3\23\3\23\7\23\u00bf\n\23\f\23"+
-		"\16\23\u00c2\13\23\3\23\2\3\4\24\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36"+
-		" \"$\2\5\4\2\b\b\27\27\4\2\t\t\26\26\3\2\4\5\2\u00d0\2\'\3\2\2\2\4\61"+
-		"\3\2\2\2\6>\3\2\2\2\bM\3\2\2\2\n\u0087\3\2\2\2\f\u0090\3\2\2\2\16\u0094"+
-		"\3\2\2\2\20\u0096\3\2\2\2\22\u0098\3\2\2\2\24\u009a\3\2\2\2\26\u009e\3"+
-		"\2\2\2\30\u00a2\3\2\2\2\32\u00a6\3\2\2\2\34\u00ae\3\2\2\2\36\u00b0\3\2"+
-		"\2\2 \u00b4\3\2\2\2\"\u00b8\3\2\2\2$\u00bc\3\2\2\2&(\5\4\3\2\'&\3\2\2"+
-		"\2()\3\2\2\2)\'\3\2\2\2)*\3\2\2\2*\3\3\2\2\2+,\b\3\1\2,\62\5\n\6\2-.\7"+
-		"\24\2\2./\5\4\3\2/\60\7\25\2\2\60\62\3\2\2\2\61+\3\2\2\2\61-\3\2\2\2\62"+
-		";\3\2\2\2\63\64\f\4\2\2\64\65\t\2\2\2\65:\5\4\3\5\66\67\f\3\2\2\678\t"+
-		"\3\2\28:\5\4\3\49\63\3\2\2\29\66\3\2\2\2:=\3\2\2\2;9\3\2\2\2;<\3\2\2\2"+
-		"<\5\3\2\2\2=;\3\2\2\2>C\5\b\5\2?@\7\26\2\2@B\5\b\5\2A?\3\2\2\2BE\3\2\2"+
-		"\2CA\3\2\2\2CD\3\2\2\2D\7\3\2\2\2EC\3\2\2\2FN\7 \2\2GN\7\35\2\2HN\7\36"+
-		"\2\2IN\7!\2\2JN\7\"\2\2KN\7\37\2\2LN\5$\23\2MF\3\2\2\2MG\3\2\2\2MH\3\2"+
-		"\2\2MI\3\2\2\2MJ\3\2\2\2MK\3\2\2\2ML\3\2\2\2N\t\3\2\2\2OP\5$\23\2PQ\5"+
-		"\"\22\2QR\7\24\2\2RS\5\b\5\2ST\7\26\2\2TU\5\b\5\2UV\7\25\2\2V\u0088\3"+
-		"\2\2\2WX\5$\23\2XY\5\36\20\2YZ\7\24\2\2Z[\5\6\4\2[\\\7\25\2\2\\\u0088"+
-		"\3\2\2\2]^\5$\23\2^_\5 \21\2_`\7\24\2\2`a\5\6\4\2ab\7\25\2\2b\u0088\3"+
-		"\2\2\2cd\5$\23\2de\5\f\7\2ef\7 \2\2f\u0088\3\2\2\2gh\5$\23\2hi\5\f\7\2"+
-		"ij\7\35\2\2j\u0088\3\2\2\2kl\5$\23\2lm\5\f\7\2mn\7\36\2\2n\u0088\3\2\2"+
-		"\2op\5$\23\2pq\5\f\7\2qr\7!\2\2r\u0088\3\2\2\2st\5$\23\2tu\5\f\7\2uv\7"+
-		"\"\2\2v\u0088\3\2\2\2wx\5$\23\2xy\5\f\7\2yz\5$\23\2z\u0088\3\2\2\2{|\5"+
-		"$\23\2|}\5\16\b\2}~\7\37\2\2~\u0088\3\2\2\2\177\u0080\5$\23\2\u0080\u0081"+
-		"\5\16\b\2\u0081\u0082\7\n\2\2\u0082\u0088\3\2\2\2\u0083\u0084\5$\23\2"+
-		"\u0084\u0085\5\f\7\2\u0085\u0086\7\34\2\2\u0086\u0088\3\2\2\2\u0087O\3"+
-		"\2\2\2\u0087W\3\2\2\2\u0087]\3\2\2\2\u0087c\3\2\2\2\u0087g\3\2\2\2\u0087"+
-		"k\3\2\2\2\u0087o\3\2\2\2\u0087s\3\2\2\2\u0087w\3\2\2\2\u0087{\3\2\2\2"+
-		"\u0087\177\3\2\2\2\u0087\u0083\3\2\2\2\u0088\13\3\2\2\2\u0089\u0091\5"+
-		"\20\t\2\u008a\u0091\5\22\n\2\u008b\u0091\5\26\f\2\u008c\u0091\5\24\13"+
-		"\2\u008d\u0091\5\32\16\2\u008e\u0091\5\30\r\2\u008f\u0091\5\34\17\2\u0090"+
-		"\u0089\3\2\2\2\u0090\u008a\3\2\2\2\u0090\u008b\3\2\2\2\u0090\u008c\3\2"+
-		"\2\2\u0090\u008d\3\2\2\2\u0090\u008e\3\2\2\2\u0090\u008f\3\2\2\2\u0091"+
-		"\r\3\2\2\2\u0092\u0095\5\20\t\2\u0093\u0095\5\22\n\2\u0094\u0092\3\2\2"+
-		"\2\u0094\u0093\3\2\2\2\u0095\17\3\2\2\2\u0096\u0097\7\3\2\2\u0097\21\3"+
-		"\2\2\2\u0098\u0099\t\4\2\2\u0099\23\3\2\2\2\u009a\u009b\7\6\2\2\u009b"+
-		"\u009c\7\13\2\2\u009c\u009d\7\6\2\2\u009d\25\3\2\2\2\u009e\u009f\7\6\2"+
-		"\2\u009f\u00a0\7\f\2\2\u00a0\u00a1\7\6\2\2\u00a1\27\3\2\2\2\u00a2\u00a3"+
-		"\7\6\2\2\u00a3\u00a4\7\r\2\2\u00a4\u00a5\7\6\2\2\u00a5\31\3\2\2\2\u00a6"+
-		"\u00a7\7\6\2\2\u00a7\u00a8\7\16\2\2\u00a8\u00a9\7\6\2\2\u00a9\33\3\2\2"+
-		"\2\u00aa\u00af\7\7\2\2\u00ab\u00ac\7\6\2\2\u00ac\u00ad\7\17\2\2\u00ad"+
-		"\u00af\7\6\2\2\u00ae\u00aa\3\2\2\2\u00ae\u00ab\3\2\2\2\u00af\35\3\2\2"+
-		"\2\u00b0\u00b1\7\6\2\2\u00b1\u00b2\7\21\2\2\u00b2\u00b3\7\6\2\2\u00b3"+
-		"\37\3\2\2\2\u00b4\u00b5\7\6\2\2\u00b5\u00b6\7\20\2\2\u00b6\u00b7\7\6\2"+
-		"\2\u00b7!\3\2\2\2\u00b8\u00b9\7\6\2\2\u00b9\u00ba\7\22\2\2\u00ba\u00bb"+
-		"\7\6\2\2\u00bb#\3\2\2\2\u00bc\u00c0\7$\2\2\u00bd\u00bf\7#\2\2\u00be\u00bd"+
-		"\3\2\2\2\u00bf\u00c2\3\2\2\2\u00c0\u00be\3\2\2\2\u00c0\u00c1\3\2\2\2\u00c1"+
-		"%\3\2\2\2\u00c2\u00c0\3\2\2\2\r)\619;CM\u0087\u0090\u0094\u00ae\u00c0";
+		"\u0004\u0001&\u00ca\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0002\u0003\u0007\u0003\u0002\u0004\u0007\u0004\u0002"+
+		"\u0005\u0007\u0005\u0002\u0006\u0007\u0006\u0002\u0007\u0007\u0007\u0002"+
+		"\b\u0007\b\u0002\t\u0007\t\u0002\n\u0007\n\u0002\u000b\u0007\u000b\u0002"+
+		"\f\u0007\f\u0002\r\u0007\r\u0002\u000e\u0007\u000e\u0002\u000f\u0007\u000f"+
+		"\u0002\u0010\u0007\u0010\u0002\u0011\u0007\u0011\u0001\u0000\u0004\u0000"+
+		"&\b\u0000\u000b\u0000\f\u0000\'\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0003\u00010\b\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0005\u00018\b"+
+		"\u0001\n\u0001\f\u0001;\t\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0005"+
+		"\u0002@\b\u0002\n\u0002\f\u0002C\t\u0002\u0001\u0003\u0001\u0003\u0001"+
+		"\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0001\u0003\u0003\u0003L\b"+
+		"\u0003\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001"+
+		"\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0001\u0004\u0003\u0004\u008e"+
+		"\b\u0004\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001\u0005\u0001"+
+		"\u0005\u0001\u0005\u0003\u0005\u0097\b\u0005\u0001\u0006\u0001\u0006\u0003"+
+		"\u0006\u009b\b\u0006\u0001\u0007\u0001\u0007\u0001\b\u0001\b\u0001\t\u0001"+
+		"\t\u0001\t\u0001\t\u0001\n\u0001\n\u0001\n\u0001\n\u0001\u000b\u0001\u000b"+
+		"\u0001\u000b\u0001\u000b\u0001\f\u0001\f\u0001\f\u0001\f\u0001\r\u0001"+
+		"\r\u0001\r\u0001\r\u0003\r\u00b5\b\r\u0001\u000e\u0001\u000e\u0001\u000e"+
+		"\u0001\u000e\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u000f\u0001\u0010"+
+		"\u0001\u0010\u0001\u0010\u0001\u0010\u0001\u0011\u0001\u0011\u0005\u0011"+
+		"\u00c5\b\u0011\n\u0011\f\u0011\u00c8\t\u0011\u0001\u0011\u0000\u0001\u0002"+
+		"\u0012\u0000\u0002\u0004\u0006\b\n\f\u000e\u0010\u0012\u0014\u0016\u0018"+
+		"\u001a\u001c\u001e \"\u0000\u0003\u0002\u0000\u0006\u0006\u0017\u0017"+
+		"\u0002\u0000\u0007\u0007\u0016\u0016\u0001\u0000\u0002\u0003\u00d8\u0000"+
+		"%\u0001\u0000\u0000\u0000\u0002/\u0001\u0000\u0000\u0000\u0004<\u0001"+
+		"\u0000\u0000\u0000\u0006K\u0001\u0000\u0000\u0000\b\u008d\u0001\u0000"+
+		"\u0000\u0000\n\u0096\u0001\u0000\u0000\u0000\f\u009a\u0001\u0000\u0000"+
+		"\u0000\u000e\u009c\u0001\u0000\u0000\u0000\u0010\u009e\u0001\u0000\u0000"+
+		"\u0000\u0012\u00a0\u0001\u0000\u0000\u0000\u0014\u00a4\u0001\u0000\u0000"+
+		"\u0000\u0016\u00a8\u0001\u0000\u0000\u0000\u0018\u00ac\u0001\u0000\u0000"+
+		"\u0000\u001a\u00b4\u0001\u0000\u0000\u0000\u001c\u00b6\u0001\u0000\u0000"+
+		"\u0000\u001e\u00ba\u0001\u0000\u0000\u0000 \u00be\u0001\u0000\u0000\u0000"+
+		"\"\u00c2\u0001\u0000\u0000\u0000$&\u0003\u0002\u0001\u0000%$\u0001\u0000"+
+		"\u0000\u0000&\'\u0001\u0000\u0000\u0000\'%\u0001\u0000\u0000\u0000\'("+
+		"\u0001\u0000\u0000\u0000(\u0001\u0001\u0000\u0000\u0000)*\u0006\u0001"+
+		"\uffff\uffff\u0000*0\u0003\b\u0004\u0000+,\u0005\u0014\u0000\u0000,-\u0003"+
+		"\u0002\u0001\u0000-.\u0005\u0015\u0000\u0000.0\u0001\u0000\u0000\u0000"+
+		"/)\u0001\u0000\u0000\u0000/+\u0001\u0000\u0000\u000009\u0001\u0000\u0000"+
+		"\u000012\n\u0002\u0000\u000023\u0007\u0000\u0000\u000038\u0003\u0002\u0001"+
+		"\u000345\n\u0001\u0000\u000056\u0007\u0001\u0000\u000068\u0003\u0002\u0001"+
+		"\u000271\u0001\u0000\u0000\u000074\u0001\u0000\u0000\u00008;\u0001\u0000"+
+		"\u0000\u000097\u0001\u0000\u0000\u00009:\u0001\u0000\u0000\u0000:\u0003"+
+		"\u0001\u0000\u0000\u0000;9\u0001\u0000\u0000\u0000<A\u0003\u0006\u0003"+
+		"\u0000=>\u0005\u0016\u0000\u0000>@\u0003\u0006\u0003\u0000?=\u0001\u0000"+
+		"\u0000\u0000@C\u0001\u0000\u0000\u0000A?\u0001\u0000\u0000\u0000AB\u0001"+
+		"\u0000\u0000\u0000B\u0005\u0001\u0000\u0000\u0000CA\u0001\u0000\u0000"+
+		"\u0000DL\u0005 \u0000\u0000EL\u0005\u001d\u0000\u0000FL\u0005\u001e\u0000"+
+		"\u0000GL\u0005!\u0000\u0000HL\u0005\"\u0000\u0000IL\u0005\u001f\u0000"+
+		"\u0000JL\u0003\"\u0011\u0000KD\u0001\u0000\u0000\u0000KE\u0001\u0000\u0000"+
+		"\u0000KF\u0001\u0000\u0000\u0000KG\u0001\u0000\u0000\u0000KH\u0001\u0000"+
+		"\u0000\u0000KI\u0001\u0000\u0000\u0000KJ\u0001\u0000\u0000\u0000L\u0007"+
+		"\u0001\u0000\u0000\u0000MN\u0003\"\u0011\u0000NO\u0003 \u0010\u0000OP"+
+		"\u0005\u0014\u0000\u0000PQ\u0003\u0006\u0003\u0000QR\u0005\u0016\u0000"+
+		"\u0000RS\u0003\u0006\u0003\u0000ST\u0005\u0015\u0000\u0000T\u008e\u0001"+
+		"\u0000\u0000\u0000UV\u0003\"\u0011\u0000VW\u0003\u001c\u000e\u0000WX\u0005"+
+		"\u0014\u0000\u0000XY\u0003\u0004\u0002\u0000YZ\u0005\u0015\u0000\u0000"+
+		"Z\u008e\u0001\u0000\u0000\u0000[\\\u0003\"\u0011\u0000\\]\u0003\u001e"+
+		"\u000f\u0000]^\u0005\u0014\u0000\u0000^_\u0003\u0004\u0002\u0000_`\u0005"+
+		"\u0015\u0000\u0000`\u008e\u0001\u0000\u0000\u0000ab\u0003\"\u0011\u0000"+
+		"bc\u0003\n\u0005\u0000cd\u0005 \u0000\u0000d\u008e\u0001\u0000\u0000\u0000"+
+		"ef\u0003\"\u0011\u0000fg\u0003\n\u0005\u0000gh\u0005\u001d\u0000\u0000"+
+		"h\u008e\u0001\u0000\u0000\u0000ij\u0003\"\u0011\u0000jk\u0003\n\u0005"+
+		"\u0000kl\u0005\u001e\u0000\u0000l\u008e\u0001\u0000\u0000\u0000mn\u0003"+
+		"\"\u0011\u0000no\u0003\n\u0005\u0000op\u0005!\u0000\u0000p\u008e\u0001"+
+		"\u0000\u0000\u0000qr\u0003\"\u0011\u0000rs\u0003\n\u0005\u0000st\u0005"+
+		"\"\u0000\u0000t\u008e\u0001\u0000\u0000\u0000uv\u0003\"\u0011\u0000vw"+
+		"\u0003\n\u0005\u0000wx\u0003\"\u0011\u0000x\u008e\u0001\u0000\u0000\u0000"+
+		"yz\u0003\"\u0011\u0000z{\u0003\f\u0006\u0000{|\u0005\u001f\u0000\u0000"+
+		"|\u008e\u0001\u0000\u0000\u0000}~\u0003\"\u0011\u0000~\u007f\u0003\f\u0006"+
+		"\u0000\u007f\u0080\u0005\b\u0000\u0000\u0080\u008e\u0001\u0000\u0000\u0000"+
+		"\u0081\u0082\u0003\"\u0011\u0000\u0082\u0083\u0003\f\u0006\u0000\u0083"+
+		"\u0084\u0005\t\u0000\u0000\u0084\u008e\u0001\u0000\u0000\u0000\u0085\u0086"+
+		"\u0003\"\u0011\u0000\u0086\u0087\u0003\f\u0006\u0000\u0087\u0088\u0005"+
+		"\n\u0000\u0000\u0088\u008e\u0001\u0000\u0000\u0000\u0089\u008a\u0003\""+
+		"\u0011\u0000\u008a\u008b\u0003\n\u0005\u0000\u008b\u008c\u0005\u001c\u0000"+
+		"\u0000\u008c\u008e\u0001\u0000\u0000\u0000\u008dM\u0001\u0000\u0000\u0000"+
+		"\u008dU\u0001\u0000\u0000\u0000\u008d[\u0001\u0000\u0000\u0000\u008da"+
+		"\u0001\u0000\u0000\u0000\u008de\u0001\u0000\u0000\u0000\u008di\u0001\u0000"+
+		"\u0000\u0000\u008dm\u0001\u0000\u0000\u0000\u008dq\u0001\u0000\u0000\u0000"+
+		"\u008du\u0001\u0000\u0000\u0000\u008dy\u0001\u0000\u0000\u0000\u008d}"+
+		"\u0001\u0000\u0000\u0000\u008d\u0081\u0001\u0000\u0000\u0000\u008d\u0085"+
+		"\u0001\u0000\u0000\u0000\u008d\u0089\u0001\u0000\u0000\u0000\u008e\t\u0001"+
+		"\u0000\u0000\u0000\u008f\u0097\u0003\u000e\u0007\u0000\u0090\u0097\u0003"+
+		"\u0010\b\u0000\u0091\u0097\u0003\u0014\n\u0000\u0092\u0097\u0003\u0012"+
+		"\t\u0000\u0093\u0097\u0003\u0018\f\u0000\u0094\u0097\u0003\u0016\u000b"+
+		"\u0000\u0095\u0097\u0003\u001a\r\u0000\u0096\u008f\u0001\u0000\u0000\u0000"+
+		"\u0096\u0090\u0001\u0000\u0000\u0000\u0096\u0091\u0001\u0000\u0000\u0000"+
+		"\u0096\u0092\u0001\u0000\u0000\u0000\u0096\u0093\u0001\u0000\u0000\u0000"+
+		"\u0096\u0094\u0001\u0000\u0000\u0000\u0096\u0095\u0001\u0000\u0000\u0000"+
+		"\u0097\u000b\u0001\u0000\u0000\u0000\u0098\u009b\u0003\u000e\u0007\u0000"+
+		"\u0099\u009b\u0003\u0010\b\u0000\u009a\u0098\u0001\u0000\u0000\u0000\u009a"+
+		"\u0099\u0001\u0000\u0000\u0000\u009b\r\u0001\u0000\u0000\u0000\u009c\u009d"+
+		"\u0005\u0001\u0000\u0000\u009d\u000f\u0001\u0000\u0000\u0000\u009e\u009f"+
+		"\u0007\u0002\u0000\u0000\u009f\u0011\u0001\u0000\u0000\u0000\u00a0\u00a1"+
+		"\u0005\u0004\u0000\u0000\u00a1\u00a2\u0005\u000b\u0000\u0000\u00a2\u00a3"+
+		"\u0005\u0004\u0000\u0000\u00a3\u0013\u0001\u0000\u0000\u0000\u00a4\u00a5"+
+		"\u0005\u0004\u0000\u0000\u00a5\u00a6\u0005\f\u0000\u0000\u00a6\u00a7\u0005"+
+		"\u0004\u0000\u0000\u00a7\u0015\u0001\u0000\u0000\u0000\u00a8\u00a9\u0005"+
+		"\u0004\u0000\u0000\u00a9\u00aa\u0005\r\u0000\u0000\u00aa\u00ab\u0005\u0004"+
+		"\u0000\u0000\u00ab\u0017\u0001\u0000\u0000\u0000\u00ac\u00ad\u0005\u0004"+
+		"\u0000\u0000\u00ad\u00ae\u0005\u000e\u0000\u0000\u00ae\u00af\u0005\u0004"+
+		"\u0000\u0000\u00af\u0019\u0001\u0000\u0000\u0000\u00b0\u00b5\u0005\u0005"+
+		"\u0000\u0000\u00b1\u00b2\u0005\u0004\u0000\u0000\u00b2\u00b3\u0005\u000f"+
+		"\u0000\u0000\u00b3\u00b5\u0005\u0004\u0000\u0000\u00b4\u00b0\u0001\u0000"+
+		"\u0000\u0000\u00b4\u00b1\u0001\u0000\u0000\u0000\u00b5\u001b\u0001\u0000"+
+		"\u0000\u0000\u00b6\u00b7\u0005\u0004\u0000\u0000\u00b7\u00b8\u0005\u0011"+
+		"\u0000\u0000\u00b8\u00b9\u0005\u0004\u0000\u0000\u00b9\u001d\u0001\u0000"+
+		"\u0000\u0000\u00ba\u00bb\u0005\u0004\u0000\u0000\u00bb\u00bc\u0005\u0010"+
+		"\u0000\u0000\u00bc\u00bd\u0005\u0004\u0000\u0000\u00bd\u001f\u0001\u0000"+
+		"\u0000\u0000\u00be\u00bf\u0005\u0004\u0000\u0000\u00bf\u00c0\u0005\u0012"+
+		"\u0000\u0000\u00c0\u00c1\u0005\u0004\u0000\u0000\u00c1!\u0001\u0000\u0000"+
+		"\u0000\u00c2\u00c6\u0005$\u0000\u0000\u00c3\u00c5\u0005#\u0000\u0000\u00c4"+
+		"\u00c3\u0001\u0000\u0000\u0000\u00c5\u00c8\u0001\u0000\u0000\u0000\u00c6"+
+		"\u00c4\u0001\u0000\u0000\u0000\u00c6\u00c7\u0001\u0000\u0000\u0000\u00c7"+
+		"#\u0001\u0000\u0000\u0000\u00c8\u00c6\u0001\u0000\u0000\u0000\u000b\'"+
+		"/79AK\u008d\u0096\u009a\u00b4\u00c6";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
